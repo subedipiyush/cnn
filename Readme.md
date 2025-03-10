@@ -24,7 +24,7 @@ Additionally, while I did say "an output", the output is typically a list of pro
 ### Elements of a neural network
 
 - Neuron: The fundamental data structure made up of weights and biases.
-= Layer: A collection of neurons; a network has at least one input layer, one hidden(middle) layer and one output layer (this arrangement is also called perceptron)
+- Layer: A collection of neurons; a network has at least one input layer, one hidden(middle) layer and one output layer (this arrangement is also called perceptron)
 - Weight: A _typically_ floating point value assigned to a neuron.
 - Bias: Noise correction (to compensate for the noise in the input) added to neurons.
 - Activation fn: Function applied at each neuron; args include: input, weight and bias; output: discrete or continuous value signifying the "contribution" of the neuron towards the overall output of the network.
@@ -40,9 +40,9 @@ Validation dataset is used to test the accuracy of the network.
   - If you are solving an image classification problem, the input layer will likely consist of N neurons with N being the number of pixels in the image; the number of neurons at the output layer would be equal to the number of categories of images the model should be able to classify; the number of neurons in the hidden layer can be artibrary.
 - For each image from the test data, _encode_ the data to match the format expected by the input layer.
   - For an image classifier this could be the greyscale value of each pixel in the image.
-- We then being _forward propagation_ where the inputs are propagated to the neurons in the hidden layer.
+- We then begin _forward propagation_ where the inputs are propagated to the neurons in the hidden layer.
 - At each neuron, we apply the activation function and propagate the result to the next layer and so on, until the ouput layer.
-  - To note is the the function applied at the output layer should match the desired outcome; we can apply a non-linear function at the hidden layers (e.g. ReLU) but can either apply no function(regression) or binary function(e.g. Sigmoid) or other function at the output layer.
+  - Something to note is that the function applied at the output layer should match the desired outcome; we can apply a non-linear function at the hidden layers (e.g. ReLU) but can either apply no function(regression) or binary function(e.g. Sigmoid) or other function at the output layer.
 - So far what we have done is _inference_; this is what a trained model would also do for a given input.
 - When it comes to training, we will have to evaluate the output and feed back the evaluation back to the network(model) for it to correct/improve its weights and biases.
   - When we say "evaluate the output", it means we are checking the accuracy of the model.
@@ -55,7 +55,7 @@ Validation dataset is used to test the accuracy of the network.
 
 We will start with a neural network generator that can be used a binary classifier.
 
-Input: TODO
+Input: x -> input _column_ vector of size N
 
 Output: Yes/No
 
